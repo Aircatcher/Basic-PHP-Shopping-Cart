@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+  /* overflow-x: hidden; */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #000;
+  background: #efefef;
+}
+
+#shoppingcart {
+	top: 10px;
+	left: 0px;
+	height: 100px;
+	width: 500px;
+	background: #AAD4FF;
+	border: 1px solid #444;
+}
+
+#shoppingcart p {
+	margin: 0 1em 1em;
+}
+
+h1 {
+	font-size: 140%;
+	margin: 0.5em 1em;
+}
+
+#booklist, #contents {
+	top: 0px;
+	left: 0px;
+	width: 500px;
+	background: #AAD4FF;
+	border: 1px solid #333;
+}
+
+#booklist ul {
+	list-style-type: none;
+}
+
+#booklist ul li {
+	margin: 0 1em 1em;
+}
+
+#contents table {
+	font-size: 90%;
+	border-collapse: collapse;
+}
+
+#contents table td {
+	border: 1px solid #999;
+	width: 20%;
+}
+
+#contents p, #contents button {
+	margin: 1em;
+}
+
+/* BOOK TABLE */
+tr {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+	border-style: solid 1px;
+    border-color: #ff7777;
+    background-color: #AAD4FF;
+    position: relative;
+    overflow: auto;
+}
+
+td a {
+    display: block;
+    color: #000;
+	border-style: solid 1px;
+    border-color: #ff7777;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+td a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td a:hover:not(.active) {
+    background-color: #557FFF;
+    color: white;
+}
