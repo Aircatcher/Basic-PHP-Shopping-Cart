@@ -1,17 +1,37 @@
+<!-- META -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="Progress Button Styles: Creative effects for loading buttons" />
+<meta name="keywords" content="progress button, loading button, 3d, loading indicator, progress indicator" />
+<meta name="author" content="Codrops" />
+
 <!-- INCLUDES -->
-<link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/navbar.css" />
-<link rel="stylesheet" href="css/searchbox.css" />
-<script src="js/prefixfree.min.js"></script>
-<script src="js/styles.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/progressButton.js"></script>
+<link rel="shortcut icon" type="image/jpg" href="include/img/favicon.jpg"/>
+
+<link rel="stylesheet" href="include/css/styles.css" />
+<link rel="stylesheet" href="include/css/navbar.css" />
+<link rel="stylesheet" href="include/css/button.css" />
+<link rel="stylesheet" href="include/css/searchbox.css" />
+
+<script src="include/js/prefixfree.min.js"></script>
+<script src="include/js/styles.js"></script>
+<script src="include/js/classie.js"></script>
+<script src="include/js/progressButton.js"></script>
+<script src="include/js/modernizr.custom.js"></script>
 
 <!-- HEADER -->
-<div style="position: fixed; top:0px; width:100%; background-color:#557FFF; z-index:2;">&nbsp;&nbsp;&nbsp;<font color="#fff" size="6em"><b>LINKBOOK</b></font></div>
+<div style="position: fixed; top:0px; width:100%; background-color:#557FFF; z-index:2;">
+	<a href="index.html" style="text-decoration:none;">
+		<img src="include/img/favicon.jpg" width="30" height="30" style="position:relative; left:4px; top:2px"/>
+		<font color="#fff" size="6em">
+			&nbsp;<b>LINKBOOK</b>
+		</font>
+	</a>
+</div>
 
 <!-- SEARCH FORM -->
-<form id="tfnewsearch" method="GET" action="http://localhost/linkbook">
+<form id="tfnewsearch" method="GET" action="search.php">
 	<div style="position: fixed; top:2px; right:10px; z-index:2;">
 		<span><input class="card-slide" id="search" type="search" placeholder="Search for books..." /><label for="search">Search</label></span>
 	</div>

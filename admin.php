@@ -10,6 +10,7 @@ require_once('include/functions.inc.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Linkbook &#0183 Admin Panel</title>
+	<?php include "webformat.php"; ?>
 </head>
 
 <body>
@@ -22,7 +23,6 @@ require_once('include/functions.inc.php');
 	<?php
 	if(isset($_GET['type']) && !empty($_GET['type'])) {
 	?>
-	<?php include "webformat.php"; ?>
 	<div id="navbar-padding">
 		<div id="shoppingcart" style="margin-top:38px; padding:10px;">
 			<h1>Admin Panel System</h1>

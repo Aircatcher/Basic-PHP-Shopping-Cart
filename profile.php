@@ -10,10 +10,10 @@ require_once('include/functions.inc.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Admin Panel &#0183; Linkbook</title>
+	<?php include "webformat.php"; ?>
 </head>
 
 <body>
-<?php include "webformat.php"; ?>
 	<div id="navbar-padding">
 		<div id="shoppingcart" style="margin-top:38px; padding:10px;">
 			<h1>Admin Panel System</h1>

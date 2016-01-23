@@ -11,17 +11,10 @@ require_once('include/functions.inc.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Linkbook</title>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<meta name="description" content="Progress Button Styles: Creative effects for loading buttons" />
-	<meta name="keywords" content="progress button, loading button, 3d, loading indicator, progress indicator" />
-	<meta name="author" content="Codrops" />
-	<link rel="shortcut icon" href="../favicon.ico">
+	<?php include "webformat.php"; ?>
 </head>
 
 <body>
-<?php include "webformat.php"; ?>
 <div id="navbar-padding">
 	<div id="shoppingcart" style="margin-top:38px;">
 		<h1>Your Shopping Cart</h1>

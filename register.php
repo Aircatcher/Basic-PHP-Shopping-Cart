@@ -10,10 +10,10 @@ require_once('include/functions.inc.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Linkbook &#0183 Register</title>
+	<?php include "webformat.php"; ?>
 </head>
 
 <body>
-<?php include "webformat.php"; ?>
 <div id="navbar-padding" style="margin-top:50px;">
 <h1>Register a New Account</h1>
 <form method="POST" style="padding-top:5px; padding-left:24px;">
@@ -35,6 +35,7 @@ if(isset($_POST['submit']))
 	}
 }
 ?>
+<br/>
 <div style="position: relative;">
 	<span>
 		<input class="balloon" id="username" type="text" name="username" placeholder="Your username..." />
@@ -48,9 +49,11 @@ if(isset($_POST['submit']))
 		<label for="password">Password</label>
 	</span>
 </div>
+<br/>
 <div class="wrapper" style="position: relative;">
-	<section><button name="submit" class="progress-button" data-style="shrink" data-horizontal>Register</button></section>
-	<section><button onclick="location.href='index.php';" class="progress-button" data-style="shrink" data-horizontal>Cancel</button></section>
+	<section><button name="submit" style="width:215px" class="progress-button" data-style="filling" data-horizontal="">Register</button></section>
+	<br/>
+	<section><button onclick="location.href='index.php';" style="background-color:#FF2A2A; width:215px" class="progress-button" data-style="shrink" data-horizontal>Cancel</button></section>
 </div>
 </form>
 

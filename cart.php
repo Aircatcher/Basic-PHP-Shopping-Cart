@@ -26,7 +26,7 @@ switch ($action) {
 		//	$image_size=$_FILES['image']['size']/1024;
 		//	$image_type=$_FILES['image']['type'];
 		//	$image_tmp=$_FILES['image']['tmp_name'];
-		//	if( ($image_type =='image/jpeg') || ($image_type=='image/gif') )
+		//	if( ($image_type =='image/jpeg') || ($image_type=='image/jpg') )
 		//	{ /* no error */ }
 		//	else{ echo "Only Jpeg and Gif Images allowed"; }
 			
@@ -89,10 +89,10 @@ $_SESSION['cart'] = $cart;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Cart &#0183 Linkbook</title>
+	<?php include "webformat.php"; ?>
 </head>
 
 <body>
-<?php include "webformat.php"; ?>
 <div id="navbar-padding">
 	<div id="shoppingcart" style="margin-top:38px;">
 		<h1>Your Shopping Cart</h1>
