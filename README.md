@@ -7,6 +7,7 @@ This is a PHP-based shopping cart, meant to be simple.
 3. Register an account<br/>
 4. Activate / Deactivate user<br/>
 5. New Interface (1/23/2016)<br/>
+6. All file includes are moved to "include" (1/23/2016 8:40PM)<br/>
 
 <b>In the future:</b><br/>
 1. Modify User Type / Level<br/>
