@@ -6,7 +6,7 @@ This is a PHP-based shopping cart, meant to be simple.
 2. Login either as 'admin' or 'user'<br/>
 3. Register an account<br/>
 4. Activate / Deactivate user<br/>
-5. New Interface<br/>
+5. New Interface (1/23/2016)<br/>
 
 <b>In the future:</b><br/>
 1. Modify User Type / Level<br/>
