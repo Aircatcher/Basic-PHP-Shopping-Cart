@@ -35,35 +35,45 @@ require_once('include/functions.inc.php');
 </script>
 <div id="navbar-padding" style="margin-top:50px">
 	<h1>Login to Your Account</h1>
-	<form method="POST" style="padding-top:5px; padding-left:24px;">
+	<form method="POST" action="profile.php" style="padding-top:5px; padding-left:24px;">
 		<?php
-		if(isset($_POST['submit']))
+		$_SESSION['timeout'] = time();
+		if ($_SESSION['timeout'] + 10 * 60 < time())
 		{
-			$username = $_POST['username'];
-			$password = md5($_POST['password']);
-			if(empty($username) or empty($password))
+			// session timed out
+			echo "Your session has timed out"; 
+		}
+		else
+		{
+			// session ok
+			if(isset($_POST['submit']))
 			{
-				echo "<p>Fields Empty!</p>";
-			}
-			else
-			{
-				$check_login = mysql_query("SELECT id FROM users WHERE username='$username' AND password='$password'");
-				if(mysql_num_rows($check_login) == 1)
+				$username = $_POST['username'];
+				$password = md5($_POST['password']);
+				if(empty($username) or empty($password))
 				{
-					$run = mysql_fetch_array($check_login);
-					$id = $run['id'];
-					$type = $run['type'];
-					if($type == 'deactivated')
-					{
-						echo "<p>Your account has been deactivated by the site admin.</p>";
-					}
-					else
-					{
-						$_SESSION['id'] = $id;
-						header('location: index.php');
-					}
+					echo "<p>Fields Empty!</p>";
 				}
-				else { echo "<p>Wrong username or password!</p>"; }
+				else
+				{
+					$check_login = mysql_query("SELECT id FROM users WHERE username='$username' AND password='$password'");
+					if(mysql_num_rows($check_login) == 1)
+					{
+						$run = mysql_fetch_array($check_login);
+						$id = $run['id'];
+						$type = $run['type'];
+						if($type == 'deactivated')
+						{
+							echo "<p>Your account has been deactivated by the site admin.</p>";
+						}
+						else
+						{
+							$_SESSION['id'] = $id;
+							header('location: index.php');
+						}
+					}
+					else { echo "<p>Wrong username or password!</p>"; }
+				}
 			}
 		}
 		?>

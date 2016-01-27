@@ -1,7 +1,10 @@
 # Basic PHP Shopping Cart
 This is a PHP-based shopping cart, meant to be simple.
 
-<b>Things that are currently available:</b><br/>
+<b>Update 1/27/2016:</b><br/>
+1. Moved<br/>
+<br/>
+Update 1/23/2016:<br/>
 1. Add to cart products<br/>
 2. Login either as 'admin' or 'user'<br/>
 3. Register an account<br/>

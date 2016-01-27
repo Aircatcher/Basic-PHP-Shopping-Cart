@@ -18,32 +18,53 @@ if(loggedin())
 	$level_name = $run_level['name'];
 }
 
-function writeShoppingCart() {
-	//$cart = $_SESSION['cart'];
-	$cart = isset($_SESSION['cart'])?$_SESSION['cart']:false;
-	if (!$cart) {
-		return '<p>You have no items in your shopping cart</p>';
-	} else {
+function writeShoppingCart()
+{
+	$cart = $_SESSION['cart'];
+	//$cart = isset($_SESSION['cart'])?$_SESSION['cart']:false;
+	if (!$cart)
+	{
+		return '<p>No items in your shopping cart</p>';
+	}
+	else
+	{
 		// Parse the cart session variable
 		$items = explode(',',$cart);
 		$s = (count($items) > 1) ? 's':'';
-		return '<p>You have <a href="cart.php">'.count($items).' item'.$s.' in your shopping cart</a></p>';
+		return '<p><a href="cart.php">'.count($items).' item'.$s.' in your shopping cart</a></p>';
 	}
 }
 
-function showCart() {
+function writeMiniCart()
+{
+	//$cart = $_SESSION['cart'];
+	$cart = isset($_SESSION['cart'])?$_SESSION['cart']:false;
+	if (!$cart)
+	{
+		return '<p>0</p>';
+	}
+	else
+	{
+		// Parse the cart session variable
+		$items = explode(',',$cart);
+		$s = (count($items) > 1) ? 's':'';
+		return '<p><a href="cart.php">'.count($items).'</a></p>';
+	}
+}
+
+function showCart()
+{
 	global $db;
 	$cart = $_SESSION['cart'];
-	if ($cart) {
+	if ($cart)
+	{
 		$items = explode(',',$cart);
 		$contents = array();
-		foreach ($items as $item) {
-			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-		}
+		foreach ($items as $item) { $contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1; }
 		$output[] = '<form action="cart.php?action=update" method="post" id="cart">';
 		$output[] = '<table style="border: 1px solid white;">';
-		foreach ($contents as $id=>$qty) {
-			$total = 0;
+		foreach ($contents as $id=>$qty)
+		{
 			$sql = 'SELECT * FROM books WHERE id = '.$id;
 			$result = $db->query($sql);
 			$row = $result->fetch();
@@ -57,6 +78,7 @@ function showCart() {
 							</center>
 							<a href="cart.php?action=delete&id='.$id.'" class="r">Remove</a></td>
 						 </td>';
+			$total = NULL;
 			$total += $price * $qty;
 			$output[] = '</tr>';
 		}
@@ -64,9 +86,8 @@ function showCart() {
 		$output[] = '<p>Grand total: <strong>Rp '.$total.'</strong></p>';
 		$output[] = '<div><button type="submit">Update cart</button></div>';
 		$output[] = '</form>';
-	} else {
-		$output[] = '<p>You shopping cart is empty.</p>';
 	}
+	else { $output[] = '<p>You shopping cart is empty.</p>'; }
 	return join('',$output);
 }
 ?>

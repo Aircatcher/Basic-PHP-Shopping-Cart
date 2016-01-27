@@ -14,9 +14,12 @@ $action = $_GET['action'];
 
 switch ($action) {
 	case 'add':
-		if ($cart) {
+		if ($cart)
+		{
 			$cart .= ','.$_GET['id'];
-		} else {
+		}
+		else
+		{
 			$cart = $_GET['id'];
 		}
 		//if ($cart) {
@@ -37,15 +40,22 @@ switch ($action) {
 	//		$cart = $_GET['id'];
 	//	}
 		break;
+	
 	case 'delete':
-		if ($cart) {
+		if ($cart)
+		{
 			$items = explode(',',$cart);
 			$newcart = '';
-			foreach ($items as $item) {
-				if ($_GET['id'] != $item) {
-					if ($newcart != '') {
+			foreach ($items as $item)
+			{
+				if ($_GET['id'] != $item)
+				{
+					if ($newcart != '')
+					{
 						$newcart .= ','.$item;
-					} else {
+					}
+					else
+					{
 						$newcart = $item;
 					}
 				}
@@ -53,27 +63,40 @@ switch ($action) {
 			$cart = $newcart;
 		}
 		break;
+	
 	case 'update':
-	if ($cart) {
+	if ($cart)
+	{
 		$newcart = '';
-		foreach ($_POST as $key=>$value) {
-			if (stristr($key,'qty')) {
+		foreach ($_POST as $key=>$value)
+		{
+			if (stristr($key,'qty'))
+			{
 				$id = str_replace('qty','',$key);
 				$items = ($newcart != '') ? explode(',',$newcart) : explode(',',$cart);
 				$newcart = '';
-				foreach ($items as $item) {
-					if ($id != $item) {
-						if ($newcart != '') {
+				foreach ($items as $item)
+				{
+					if ($id != $item)
+					{
+						if ($newcart != '')
+						{
 							$newcart .= ','.$item;
-						} else {
+						}
+						else
+						{
 							$newcart = $item;
 						}
 					}
 				}
-				for ($i=1;$i<=$value;$i++) {
-					if ($newcart != '') {
+				for ($i=1;$i<=$value;$i++)
+				{
+					if ($newcart != '')
+					{
 						$newcart .= ','.$id;
-					} else {
+					}
+					else
+					{
 						$newcart = $id;
 					}
 				}
@@ -89,7 +112,7 @@ $_SESSION['cart'] = $cart;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Cart &#0183 Linkbook</title>
-	<?php include "webformat.php"; ?>
+	<?php include "webformat.php";?>
 </head>
 
 <body>
@@ -101,8 +124,8 @@ $_SESSION['cart'] = $cart;
 
 	<div id="contents" style="margin-top:24px;">
 		<h1>Please check quantities...</h1>
-		<?php echo showCart(); ?>		
-		<p><a href="index.php">Back to bookshop...</a></p>
+		<?php echo showCart(); ?>
+		<p><a href="index.php">Back to Homepage</a></p>
 	</div>
 </div>
 </body>

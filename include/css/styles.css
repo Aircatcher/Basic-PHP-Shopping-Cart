@@ -13,6 +13,8 @@ body {
   background: #efefef;
 }
 
+/* CART & CONTENTS
+----------------------------------------------------------------------------- */
 #shoppingcart {
 	top: 10px;
 	left: 0px;
@@ -61,7 +63,30 @@ h1 {
 	margin: 1em;
 }
 
-/* BOOK TABLE */
+/* LINKS
+----------------------------------------------------------------------------- */
+a{
+    -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    -ms-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+	text-decoration: none;
+}
+
+a:hover,
+a.continue-reading:hover{
+    color: #d74142;
+}
+
+a.continue-reading{
+    font: italic 12px 'Arimo', sans-serif;
+    cursor: pointer;
+    color: #aaa;
+}
+
+/* BOOKS
+----------------------------------------------------------------------------- */
 tr {
     list-style-type: none;
     margin: 0;
@@ -78,7 +103,7 @@ td a {
     color: #000;
 	border-style: solid 1px;
     border-color: #ff7777;
-    padding: 8px 0 8px 16px;
+    padding: 8px 12px 8px 12px; /* up ~ right ~ bottom ~ left */
     text-decoration: none;
 }
 

@@ -10,7 +10,7 @@ require_once('include/functions.inc.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<title>Admin Panel &#0183; Linkbook</title>
-	<?php include "webformat.php"; ?>
+	<?php include "webformat.php";?>
 </head>
 
 <body>
@@ -21,22 +21,21 @@ require_once('include/functions.inc.php');
 			<?php
 			if($user_level == 1)
 			{
-				include "admin.php";
-				echo "<div style='margin-top:75px;'></div>";
+				echo "<div style='margin-top:40px;'></div>";
 				echo "<table style='width:502px'>";
 				echo	"<tr>";
 				echo		"<th colspan='2'>User Management</th>";
 				echo	"</tr>";
 				echo 	"<tr>";
-				echo 		"<td style='padding: 12px 0px;'><a href='admin.php?type=user'><center>User Settings</center></a></td>";
-				echo		"<td><a href='admin.php?type=admin'><center>Modify User Type / Level</center></a></td>";
+				echo 		"<td style='padding: 12px 0px;'><a href='admin/admin.php?type=user'><center>User Settings</center></a></td>";
+				echo		"<td><a href='admin/admin.php?type=admin'><center>Modify User Type / Level</center></a></td>";
 				echo	"</tr>";
 				echo 	"<tr>";
 				echo		"<th colspan='2'>Product Management</th>";
 				echo	"</tr>";
 				echo 	"<tr>";
-				echo 		"<td style='padding: 12px 0px;'><a href='admin.php?type=admin'><center>Add Products</center></a></td>";
-				echo 		"<td><a href='admin.php?type=admin'><center>Remove Products</center></a></td>";
+				echo 		"<td style='padding: 12px 0px;'><a href='admin/admin.php?type=admin'><center>Add Products</center></a></td>";
+				echo 		"<td><a href='admin/admin.php?type=admin'><center>Remove Products</center></a></td>";
 				echo 	"</tr>";
 				echo "</table>";
 			}

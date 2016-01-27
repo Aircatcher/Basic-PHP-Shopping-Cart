@@ -9,11 +9,11 @@ $type = $_GET['type'];
 if($type == 'activated')
 {
 	mysql_query("UPDATE users SET type='deactivated' WHERE id='$id'");
-	header('location: admin.php?type=user');
+	header('location: admin/admin.php?type=user');
 }
 else if($type == 'deactivated')
 {
 	mysql_query("UPDATE users SET type='activated' WHERE id='$id'");
-	header('location: admin.php?type=user');
+	header('location: admin/admin.php?type=user');
 }
 ?>
