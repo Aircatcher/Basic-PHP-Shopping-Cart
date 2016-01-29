@@ -9,7 +9,7 @@ require_once('include/functions.inc.php');
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>Linkbook &#0183 Admin Panel</title>
+	<title>Admin Panel &#0183 Linkbook</title>
 	<?php include "webformat.php"; ?>
 </head>
 
@@ -26,7 +26,7 @@ require_once('include/functions.inc.php');
 	<div id="navbar-padding">
 		<div id="shoppingcart" style="margin-top:38px; padding:10px;">
 			<h1>Admin Panel System</h1>
-			<p>You are logged in as <b><?php echo $username ?></b> [Privilege: <?php echo $level_name ?>]</p>
+			<p>You are logged in as <b><?php echo $username ?></b> [Privilege: <?php echo $type ?>]</p>
 			</div>
 			<div>
 				<table>

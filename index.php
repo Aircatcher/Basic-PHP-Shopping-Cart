@@ -21,6 +21,7 @@ require_once('include/functions.inc.php');
 		<?php echo writeShoppingCart(); ?>
 	</div>
 	
+	<!------------------------------- BOOK TABLE ------------------------------>
 	<br/><font size="5em">Books Available</font>
 	<?php
 	$sql = 'SELECT * FROM books ORDER BY id';
@@ -32,7 +33,7 @@ require_once('include/functions.inc.php');
 							<a href="product.php?id='.$row['id'].'"><img src="include/img/products/'.$row['id'].'.jpg" width="200" height="225" alt="'.$row['title'].'"/></a>
 						 </td>';
 		$output[] = '<td style="padding:5px;">
-								Category: '.$row['cat'].'
+								Category: '.$row['category'].'
 								<b><a style="padding: 8px 0 8px 0;" href="product.php?id='.$row['id'].'">'.$row['title'].'</a></b>
 								by '.$row['author'].'<br/>
 								Rp '.$row['price'].'<br/><br/>

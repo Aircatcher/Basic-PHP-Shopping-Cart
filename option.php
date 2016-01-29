@@ -6,14 +6,16 @@ require_once('include/functions.inc.php');
 $id = $_GET['id'];
 $type = $_GET['type'];
 
+/* Activate / Deactivate User
+*******************************************************/
 if($type == 'activated')
 {
 	mysql_query("UPDATE users SET type='deactivated' WHERE id='$id'");
-	header('location: admin/admin.php?type=user');
+	header('location: admin.php?type=user');
 }
 else if($type == 'deactivated')
 {
 	mysql_query("UPDATE users SET type='activated' WHERE id='$id'");
-	header('location: admin/admin.php?type=user');
+	header('location: admin.php?type=user');
 }
 ?>

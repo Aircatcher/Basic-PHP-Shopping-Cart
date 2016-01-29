@@ -17,14 +17,16 @@ if (isset($_GET['id'])) {
 		// get all the product details
 		while($row = mysql_fetch_array($sql)){ 
 			 $title = $row["title"];
-			 $category = $row["cat"];
+			 $category = $row["category"];
 			 $description = $row["description"];
-			 $price = $row["price"];
+			 $price = "Rp ".$row["price"];
          }
 		 
 	} else {
-		echo "That item does not exist.";
-	    exit();
+		$title = "Item is not exist";
+		$category = NULL;
+		$description = NULL;
+		$price = NULL;
 	}
 		
 } else {
@@ -37,11 +39,12 @@ mysql_close();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title><?php echo $title; ?></title>
+	<title><?php echo $title; ?> &#0183 Linkbook</title>
 	<?php include "webformat.php";?>
 	<link rel="stylesheet" href="include/css/style.css" type="text/css" media="screen" />
 </head>
 <body>
+	<!------------------------------ LEFT NAVBAR ------------------------------>
 	<div id="navbar-padding">
 		<br/><br/><br/>
 		<table width="100%" border="0" cellspacing="0" cellpadding="15">
@@ -57,7 +60,7 @@ mysql_close();
 				<td width="100%" valign="top" style="padding:10px">
 					<h3><?php echo $title; ?></h3>
 					<p align="justify">Category: <?php echo $category; ?> <br />
-						<?php echo "Rp ".$price; ?><br /><br />
+						<?php echo $price; ?><br /><br />
 						<?php echo $description; ?><br /><br />
 					</p>
 				</td>

@@ -1,6 +1,20 @@
 # Basic PHP Shopping Cart
-This is a PHP-based shopping cart, meant to be simple.
+This is a PHP-based shopping cart. Non-PHP Framework.
 
+MySQL settings:<br/>
+Hostname: localhost<br/>
+Username: root<br/>
+No Password<br/>
+DB Name: linkbookdb.sql<br/>
+<br/>
+Web login (admin):<br/>
+Username: admin<br/>
+Password: admin314<br/>
+<br/>
+Web login (user):<br/>
+Username: user<br/>
+Password: user123<br/>
+<br/>
 <b>Update 1/27/2016:</b><br/>
 1. Moved<br/>
 <br/>

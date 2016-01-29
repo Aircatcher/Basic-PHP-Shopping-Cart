@@ -14,6 +14,7 @@ $action = $_GET['action'];
 
 switch ($action) {
 	case 'add':
+		header('Location: cart.php');
 		if ($cart)
 		{
 			$cart .= ','.$_GET['id'];
@@ -65,46 +66,57 @@ switch ($action) {
 		break;
 	
 	case 'update':
-	if ($cart)
-	{
-		$newcart = '';
-		foreach ($_POST as $key=>$value)
+		if ($cart)
 		{
-			if (stristr($key,'qty'))
+			$newcart = '';
+			foreach ($_POST as $key=>$value)
 			{
-				$id = str_replace('qty','',$key);
-				$items = ($newcart != '') ? explode(',',$newcart) : explode(',',$cart);
-				$newcart = '';
-				foreach ($items as $item)
+				if (stristr($key,'qty'))
 				{
-					if ($id != $item)
+					$id = str_replace('qty','',$key);
+					$items = ($newcart != '') ? explode(',',$newcart) : explode(',',$cart);
+					$newcart = '';
+					foreach ($items as $item)
+					{
+						if ($id != $item)
+						{
+							if ($newcart != '')
+							{
+								$newcart .= ','.$item;
+							}
+							else
+							{
+								$newcart = $item;
+							}
+						}
+					}
+					for ($i=1;$i<=$value;$i++)
 					{
 						if ($newcart != '')
 						{
-							$newcart .= ','.$item;
+							$newcart .= ','.$id;
 						}
 						else
 						{
-							$newcart = $item;
+							$newcart = $id;
 						}
-					}
-				}
-				for ($i=1;$i<=$value;$i++)
-				{
-					if ($newcart != '')
-					{
-						$newcart .= ','.$id;
-					}
-					else
-					{
-						$newcart = $id;
 					}
 				}
 			}
 		}
-	}
-	$cart = $newcart;
-	break;
+		$cart = $newcart;
+		break;
+	
+	case 'buy':
+		if ($cart)
+		{
+			$total = NULL;
+			$total += $price * $qty;
+			$items = explode(',',$cart);
+			$newcart = '';
+		}
+		$cart = $newcart;
+		break;
 }
 $_SESSION['cart'] = $cart;
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -123,10 +135,11 @@ $_SESSION['cart'] = $cart;
 	</div>
 
 	<div id="contents" style="margin-top:24px;">
-		<h1>Please check quantities...</h1>
+		<h1>Items in the Cart...</h1>
 		<?php echo showCart(); ?>
 		<p><a href="index.php">Back to Homepage</a></p>
 	</div>
+	<br/><br/><br/>
 </div>
 </body>
 </html>

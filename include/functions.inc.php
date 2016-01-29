@@ -3,13 +3,13 @@ session_start();
 function loggedin()
 {
 	if(isset($_SESSION['id']) && !empty($_SESSION['id'])) { return true; }
-	else { return false;}
+	else { return false; }
 }
 
 if(loggedin())
 {
-	$myID = $_SESSION['id'];
-	$user_query = mysql_query("SELECT username, user_level FROM users WHERE id='$myID'");
+	$id = $_SESSION['id'];
+	$user_query = mysql_query("SELECT username, user_level FROM users WHERE id='$id'");
 	$run_user = mysql_fetch_array($user_query);
 	$username = $run_user['username'];
 	$user_level = $run_user['user_level'];
@@ -20,12 +20,9 @@ if(loggedin())
 
 function writeShoppingCart()
 {
-	$cart = $_SESSION['cart'];
-	//$cart = isset($_SESSION['cart'])?$_SESSION['cart']:false;
-	if (!$cart)
-	{
-		return '<p>No items in your shopping cart</p>';
-	}
+	//$cart = $_SESSION['cart'];
+	$cart = isset($_SESSION['cart'])?$_SESSION['cart']:false;
+	if (!$cart) { return '<p>No items in your shopping cart</p>'; }
 	else
 	{
 		// Parse the cart session variable
@@ -39,16 +36,13 @@ function writeMiniCart()
 {
 	//$cart = $_SESSION['cart'];
 	$cart = isset($_SESSION['cart'])?$_SESSION['cart']:false;
-	if (!$cart)
-	{
-		return '<p>0</p>';
-	}
+	if (!$cart) { return '0'; }
 	else
 	{
 		// Parse the cart session variable
 		$items = explode(',',$cart);
 		$s = (count($items) > 1) ? 's':'';
-		return '<p><a href="cart.php">'.count($items).'</a></p>';
+		return '<a href="cart.php">'.count($items).'</a>';
 	}
 }
 
@@ -84,8 +78,12 @@ function showCart()
 		}
 		$output[] = '</table>';
 		$output[] = '<p>Grand total: <strong>Rp '.$total.'</strong></p>';
-		$output[] = '<div><button type="submit">Update cart</button></div>';
-		$output[] = '</form>';
+		
+		$output[] = '<div class="wrapper" style="margin-left:240px;">
+							<section><button name="submit" style="width:225px" class="progress-button" data-style="shrink" data-horizontal>Update</button></section>
+							<section><button name="submit" style="width:225px" class="progress-button" data-style="shrink" data-horizontal>Purchase</button></section>
+						 </div>';
+		$output[] = '<ta</form>';
 	}
 	else { $output[] = '<p>You shopping cart is empty.</p>'; }
 	return join('',$output);
